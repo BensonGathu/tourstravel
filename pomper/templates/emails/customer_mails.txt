@@ -1,0 +1,2 @@
+Hello {{name}}
+A customer from Pomper Advertures and Safaris' site has sent a mail inquiry.

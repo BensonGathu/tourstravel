@@ -1,0 +1,37 @@
+{% extends 'dashboard/layout_dashboard.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="col-xl-12">
+    <!-- details card-->
+    <div class="card mb-4">
+        <div class="card-header text-center">Gallery</div>
+        <div class="card-body ">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    {{ form.date|as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ form.pic_desc|as_crispy_field }}
+                </div>
+                <div class="form-group">
+                    {{ form.pic|as_crispy_field }}
+                </div>
+
+                <!-- button-->
+                <button class="btn btn-primary" type="submit">Post Pic</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker();
+    });
+</script>
+{% endblock %}

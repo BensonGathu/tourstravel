@@ -1,0 +1,97 @@
+ {% extends 'base.html' %}
+ {% load static%}
+ {% load crispy_forms_tags %}
+
+ {% block content %}
+
+ <main style="margin-top: 10%;">
+     <!-- Main page content-->
+     <div class="container">
+
+         <legend class="text-center">
+             <div class="card-header">PROFILE</div>
+         </legend>
+
+         <div class="row">
+             <div class="col-xl-4">
+                 <!-- Profile picture card-->
+                 <div class="card">
+                     <div class="card-header">Profile Picture</div>
+                     <div class="card-body text-center">
+                         {% if current_user.is_customer and current_user.is_active %}
+                         <!-- Profile picture image-->
+                         <img class="img-account-profile rounded-circle mb-2" style="width: 100%; height: auto;"
+                             src="{{ user.customer.profile_pic_url }}" alt="profile_pic" />
+                         {% endif %}
+                         {% if current_user.is_admin and current_user.is_active %}
+                         <!-- Profile picture image-->
+                         <img class="img-account-profile rounded-circle mb-2" style="width: 100%; height: auto;"
+                             src="{{ user.admin_user.profile_pic_url }}" alt="profile_pic" />
+                         {% endif %}
+                         <!-- Profile picture help block-->
+                         <div class="small font-italic text-muted mb-4">JPG or PNG not larger than 5 MB</div>
+                     </div>
+                 </div>
+
+
+             </div>
+             <div class="col-xl-8">
+                 <!-- Account details card-->
+                 <div class="card mb-4">
+                     <div class="card-header">Account Details</div>
+                     <div class="card-body ">
+                         <form action="" method="POST" enctype="multipart/form-data">
+                             {% csrf_token %}
+                             <!-- Form Group (username)-->
+                             <div class="form-group">
+                                 {{ u_form.username|as_crispy_field }}
+                             </div>
+                             <!-- Form Row-->
+                             <div class="form-row">
+                                 <!-- Form Group (first name)-->
+                                 <div class="form-group col-md-6">
+                                     {{ u_form.first_name|as_crispy_field }}
+                                 </div>
+                                 <!-- Form Group (last name)-->
+                                 <div class="form-group col-md-6">
+                                     {{ u_form.last_name|as_crispy_field }}
+                                 </div>
+                             </div>
+                             <!-- Form Row        -->
+                             <div class="form-row">
+                                 <!-- Form Group (email)-->
+                                 <div class="form-group col-md-6">
+                                     {{ u_form.email|as_crispy_field }}
+                                 </div>
+                                 <!-- Form Group (id_number)-->
+                                 <div class="form-group col-md-6">
+                                     {{ c_form.id_number|as_crispy_field }}
+                                 </div>
+                             </div>
+                             <!-- Form Group (profile_pic)-->
+                             <div class="form-group">
+                                 {{ c_form.profile_pic|as_crispy_field }}
+                             </div>
+                             <!-- Form Row-->
+                             <div class="form-row">
+                                 <!-- Form Group (ontacts)-->
+                                 <div class="form-group col-md-6">
+                                     {{ c_form.contacts|as_crispy_field }}
+                                 </div>
+                                 <!-- Form Group (job_title)-->
+                                 <div class="form-group col-md-6">
+                                     {{ c_form.location|as_crispy_field }}
+                                 </div>
+                             </div>
+                             <!-- Save changes button-->
+                             <button class="btn btn-primary" type="submit">Save changes</button>
+                         </form>
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </main>
+
+ {% endblock %}

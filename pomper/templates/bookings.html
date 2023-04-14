@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="margin-top: 10%;">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong class="card-title ">Book it!</strong>
+                    </div>
+                    <div class="card-body">
+                        <!-- Credit Card -->
+                        <div id="pay-invoice">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center">{{ trip.trip_name }}</h3>
+                                </div>
+                                <hr>
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group text-center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-payment" class="control-label mb-1">Current amount</label>
+                                        <input id="cc-payment" name="amount" type="text" class="form-control tripAmount"
+                                            aria-required="true" aria-invalid="false" value="{{ trip.price }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-payment" class="control-label mb-1">Members</label>
+                                        <input id="cc-payment memb" name="members" type="number"
+                                            class="form-control memb" aria-required="true" aria-invalid="false"
+                                            onKeyUp="calcPrice()">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-payment" class="control-label mb-1">Total amount</label>
+                                        <span id="payment-button-amount " class="totalPrice">KSH
+                                            {{ trip.price }}</span>
+                                        <input type="number" class="totalPriceView" name="totalPriceView" hidden
+                                            id="totalPriceView">
+                                    </div>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <span id="payment-button-amount ">Payment </span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                                </form>
+
+                            </div>
+                            <!-- <div class="card-footer" style="display:none;">
+                                <div>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount">Pay KSH {{ total }}</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

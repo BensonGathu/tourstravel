@@ -1,0 +1,59 @@
+{% extends 'dashboard/layout_dashboard.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="col-xl-12">
+    <!-- details card-->
+    <div class="card mb-4">
+        <div class="card-header text-center">Road Trip</div>
+        <div class="card-body ">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    {{ form.trip_name|as_crispy_field }}
+                </div>
+                <!-- Form Row-->
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        {{ form.start_date|as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ form.end_date|as_crispy_field }}
+                    </div>
+                </div>
+                <!-- Form Row        -->
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        {{ form.location|as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ form.desc|as_crispy_field }}
+                    </div>
+                </div>
+                <!-- Form Row-->
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        {{ form.price|as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ form.pictures|as_crispy_field }}
+                    </div>
+                </div>
+                <!-- Save changes button-->
+                <button class="btn btn-primary" type="submit">Post Trip</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

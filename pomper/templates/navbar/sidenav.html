@@ -1,0 +1,81 @@
+  <!-- Left Panel -->
+
+  <nav class="navbar navbar-expand-sm navbar-default">
+      <div id="main-menu" class="main-menu collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+
+              <li class="active">
+                  <a href="{% url 'dashboard' %}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+              </li>
+              <li>
+                  <a href="{% url 'home' %}"><i class="menu-icon fa fa-home"></i>Home </a>
+              </li>
+              <li class="menu-title">Tours</li><!-- /.menu-title -->
+              <li class="menu-item-has-children dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="menu-icon fa fa-map-marker"></i>Tours </a>
+                  <ul class="sub-menu children dropdown-menu">
+                      <li><i class="fa fa-puzzle-piece"></i><a href="">Student Tours <span
+                                  class="count bg-pink">6</span></a></li>
+                      <li><i class="fa fa-users"></i><a href="{% url 'group_tours' %}">Group Tours <span
+                                  class="count bg-dark">{{ group_count }}</span></a></li>
+
+                  </ul>
+              </li>
+              <li>
+                  <a href="{% url 'road_trips' %}"><i class="menu-icon fa fa-road"></i>Road Trips <span
+                          class="count bg-primary">{{ trips_count }}</span> </a>
+              </li>
+              <li>
+                  <a href="{% url 'adventures_safaris' %}"><i class="menu-icon fa fa-road"></i>Adventures
+                      <span class="count bg-dark">{{ adventures_count }}</span> </a>
+              </li>
+              <li>
+                  <a href="{% url 'gallery_post' %}"><i class="menu-icon fa fa-camera"></i>Gallery
+                      <span class="count bg-dark">{{ gallery_count }}</span> </a>
+              </li>
+              <li>
+                  <a href=""><i class="menu-icon fa fa-stumbleupon"></i>Hiking <span
+                          class="count bg-warning">16</span></a>
+              </li>
+              <li>
+                  <a href=""><i class="menu-icon fa fa-compass"></i>Camping <span class="count bg-danger">5</span></a>
+              </li>
+              <li>
+                  <a href=""><i class="menu-icon fa fa-heart"></i>HoneyMoons <span
+                          class="count bg-success">17</span></a>
+              </li>
+              <li>
+                  <a href=""><i class="menu-icon fa fa-building"></i>Team Buildings <span
+                          class="count bg-info">9</span></a>
+              </li>
+
+
+              <li class="menu-title">Bookings</li><!-- /.menu-title -->
+
+              <li class="menu-item-has-children dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="menu-icon fa fa-credit-card"></i>Bookings</a>
+                  <ul class="sub-menu children dropdown-menu">
+                      <li><i class="menu-icon fa fa-hotel"></i><a href="">Hotel Bookings <span
+                                  class="count bg-secondary">12</span>
+                          </a></li>
+                      <li><i class="menu-icon fa fa-plane"></i><a href="">Flight Bookings <span
+                                  class="count bg-dark">8</span></a>
+                      </li>
+                      <li><i class="menu-icon fa fa-ticket"></i><a href="">Ticketing <span
+                                  class="count bg-warning">2</span></a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a href=""><i class="menu-icon fa fa-taxi"></i>Airport Transfers <span
+                          class="count bg-danger-light">10</span></a>
+              </li>
+
+
+          </ul>
+      </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <!-- /#left-panel -->

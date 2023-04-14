@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="home">
+    <div class="home_background parallax-window" data-parallax="scroll"
+        data-image-src="../../static/images/about_background.jpg">
+    </div>
+    <div class="home_content">
+        <div class="home_title">Tour search</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <!-- Offers Grid -->
+
+            <div class="offers_grid">
+
+                <!-- Offers Item -->
+                {% if trips %}
+                {% for trip in trips %}
+                <div class="offers_item rating_4">
+                    <div class="row">
+                        <div class="col-lg-1 temp_col"></div>
+                        <div class="col-lg-3 col-1680-4">
+                            <div class="offers_image_container">
+                                <div class="offers_image_background"
+                                    style="background-image:url({{ trip.pictures_url }})"></div>
+                                <div class="offer_name"><a href="{% url 'trip' trip.id %}">{{ trip.trip_name }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="offers_content">
+                                <div class="offers_price">KSH {{ trip.price }}</div>
+                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                                <p class="offers_text">{{ trip.desc }}</p>
+                                <div class="offers_icons">
+                                    <ul class="offers_icons_list">
+                                        <li class="offers_icons_item"><img src="../../static/images/post.png" alt="">
+                                        </li>
+                                        <li class="offers_icons_item"><img src="../../static/images/compass.png" alt="">
+                                        </li>
+                                        <li class="offers_icons_item"><img src="../../static/images/bicycle.png" alt="">
+                                        </li>
+                                        <li class="offers_icons_item"><img src="../../static/images/sailboat.png"
+                                                alt=""></li>
+                                    </ul>
+                                </div>
+                                <div class="button book_button" style="background: black;"><a
+                                        href="{% url 'bookings' trip.id %}">book<span></span><span></span><span></span></a>
+                                </div>
+                                <div class="offer_reviews">
+                                    <div class="offer_reviews_content">
+                                        <div class="offer_reviews_title">{{ trip.location }}</div>
+                                        <!-- <div class="offer_reviews_subtitle">100 reviews</div> -->
+                                    </div>
+                                    <!-- <div class="offer_reviews_rating text-center">8.1</div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% else %}
+                <h2 class="text-center""><i class=" icon-frown icon-4x"></i></h2>
+                <h2 class="text-center"">{{message}}</h2>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

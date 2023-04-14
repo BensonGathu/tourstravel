@@ -1,0 +1,1 @@
+web: gunicorn pomper_adventures.wsgi --log-file -

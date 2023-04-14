@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<!-- Home -->
+
+<div class="home">
+    <div class="home_background parallax-window" data-parallax="scroll" data-image-src="../../static/images/pom21.JPG">
+    </div>
+    <div class="home_content">
+        <div class="home_title">contact</div>
+    </div>
+</div>
+
+<!-- Contact -->
+
+<div class="contact_form_section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% include 'partials/messages.html' %}
+                <!-- Contact Form -->
+                <div class="contact_form_container"
+                    style="background: linear-gradient(to top right, #fa9e1b, #1d1b1f);">
+                    <div class="contact_title text-center">get in touch</div>
+                    <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data" id="contact_form"
+                        class="contact_form text-center">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            {{ form.from_email|as_crispy_field }}
+
+                        </div>
+                        <div class="form-group">
+                            {{ form.subject|as_crispy_field }}
+
+                        </div>
+                        <div class="form-group">
+                            {{ form.message|as_crispy_field }}
+
+                        </div>
+
+                        <button type="submit" style="background: black;"
+                            class="form_submit_button button trans_200">send
+                            message<span></span><span></span><span></span></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About -->
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+
+                <!-- About - Image -->
+
+                <div class="about_image">
+                    <img src="../../static/images/man.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <!-- About - Content -->
+
+                <div class="about_content">
+                    <div class="logo_container about_logo">
+                        <div class="logo"><a href="#"><img src="../../static/images/pomper.jpg" style="width: 25%;"
+                                    alt="">Pomper </a></div>
+                    </div>
+                    <p class="about_text">Contact us if anything is not clear and out support team will get right back
+                        to you.</p>
+                    <ul class="about_social_list">
+                        <li class="about_social_item"><a
+                                href="https://www.instagram.com/pomper_adventures_and_safaris/"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li class="about_social_item"><a href="https://facebook.com/PomperAdventures/"><i
+                                    class="fa fa-facebook-f"></i></a></li>
+                        <li class="about_social_item"><a href="https://twitter.com/pompersafaris"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li class="about_social_item"><a href="https://www.linkedin.com/in/kennedy-kamau-4aa707183"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                        <li class="about_social_item"><a
+                                href="https://www.youtube.com/channel/UCH78yXWgoq3uryQ5ZBD3t_w"><i
+                                    class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <!-- About Info -->
+
+                <div class="about_info">
+                    <ul class="contact_info_list">
+                        <li class="contact_info_item d-flex flex-row">
+                            <div>
+                                <div class="contact_info_icon"><img src="../../static/images/placeholder.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="contact_info_text">Nairobi, Kenya</div>
+                        </li>
+                        <li class="contact_info_item d-flex flex-row">
+                            <div>
+                                <div class="contact_info_icon"><img src="../../static/images/phone-call.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="contact_info_text">0716930397 | 0777930397</div>
+                        </li>
+                        <li class="contact_info_item d-flex flex-row">
+                            <div>
+                                <div class="contact_info_icon"><img src="../../static/images/message.svg" alt=""></div>
+                            </div>
+                            <div class="contact_info_text"><a href="mailto:kennypazardo@gmail.com?Subject=Hello"
+                                    target="_top">kennypazardo@gmail.com</a></div>
+                        </li>
+                        <li class="contact_info_item d-flex flex-row">
+                            <div>
+                                <div class="contact_info_icon"><img src="../../static/images/planet-earth.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="contact_info_text"><a href="#">www.pomperadventures.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Google Map -->
+
+<div class="pomper_map">
+    <div id="google_map" class="google_map">
+        <div class="map_container">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,125 @@
+{% load static%}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pomper Adventures and Safaris</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="../../static/images/pomper.jpg" style="width: 150px; height: 100px;" />
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+
+</head>
+
+<body>
+
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="header-bar d-flex d-lg-block align-items-center">
+            <div class="site-logo">
+                <a href="{% url 'gallery' %}">Gallery</a>
+            </div>
+
+            <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                    class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+            <div class="main-menu">
+                <ul class="js-clone-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'about' %}">About us</a></li>
+                    <li><a href="{% url 'trips' %}">Tours</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+                <ul class="social js-clone-nav">
+                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="container-fluid photos">
+
+                <div class="row pt-4 mb-5 text-center">
+                    <div class="col-12">
+                        <h2 class="text-white mb-4">Pomper Adventures and Safaris: Gallery</h2>
+                    </div>
+                </div>
+
+                <div class="row align-items-stretch">
+                    {% for pics in photos %}
+
+                    <div class="col-6 col-md-6 col-lg-4" style="width:100%" data-aos="fade-up" data-aos-delay="100">
+                        <a href="{{ pics.pic_url }}" class="d-block photo-item" data-fancybox="gallery">
+                            <img src="{{ pics.pic_url }}" alt="Image" class="img-fluid">
+                            <div class="photo-text-more">
+                                <span class="icon icon-search"></span>
+                            </div>
+                        </a>
+                    </div>
+
+                    {% endfor %}
+                    <!-- <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
+                        <a href="{% static 'images/pom3.jpg' %}" class="d-block photo-item" data-fancybox="gallery">
+                            <img src="{% static 'images/pom3.jpg' %}" alt="Image" class="img-fluid">
+                            <div class="photo-text-more">
+                                <span class="icon icon-search"></span>
+                            </div>
+                        </a>
+                    </div> -->
+
+
+
+                </div>
+
+
+            </div>
+        </main>
+
+    </div>
+    <script src="{% static 'js/scripts/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/scripts/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/scripts/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/scripts/popper.min.js' %}"></script>
+    <script src="{% static 'js/scripts/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/scripts/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/scripts/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/scripts/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/scripts/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/scripts/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'js/scripts/aos.js' %}"></script>
+
+    <script src="{% static 'js/scripts/jquery.fancybox.min.js' %}"></script>
+
+    <script src="{% static 'js/scripts/main.js' %}"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

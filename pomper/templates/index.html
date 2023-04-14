@@ -1,0 +1,496 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- {% load crispy_forms_tags %} -->
+
+
+{% block content %}
+
+<!-- Home -->
+
+<div class="home">
+
+    <!-- Home Slider -->
+
+    <div class="home_slider_container mb-5">
+
+        <div class="owl-carousel owl-theme home_slider">
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+
+                <div class="home_slider_background" style="background-image:url(../../static/images/pom12.jpg)">
+                </div>
+
+                <div class="home_slider_content text-center">
+                    <div class="home_slider_content_inner" data-animation-in="flipInX"
+                        data-animation-out="animate-out fadeOut">
+                        <h1 class="edit">Pomper</h1>
+                        <h1 class="mt-1">Adventures & Safaris</h1>
+                        <div class="button home_slider_button">
+                            <div class="button_bcg"
+                                style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                href="{% url 'trips' %}">explore
+                                now<span></span><span></span><span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image:url(../../static/images/homee.jpg)">
+                </div>
+
+                <div class="home_slider_content text-center">
+                    <div class="home_slider_content_inner" data-animation-in="flipInX"
+                        data-animation-out="animate-out fadeOut">
+                        <h1 class="edit">Adventure Awaits,</h1>
+                        <h1 class="mt-1">Go Find It</h1>
+                        <div class="button home_slider_button">
+                            <div class="button_bcg"
+                                style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                href="{% url 'trips' %}">explore
+                                now<span></span><span></span><span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Item -->
+            <div class="owl-item home_slider_item">
+                <div class="home_slider_background" style="background-image:url(../../static/images/pom2.jpg)">
+                </div>
+
+                <div class="home_slider_content text-center">
+                    <div class="home_slider_content_inner" data-animation-in="flipInX"
+                        data-animation-out="animate-out fadeOut">
+                        <h1 class="edit">Discover</h1>
+                        <h1 class="mt-1">and Explore</h1>
+                        <div class="button home_slider_button">
+                            <div class="button_bcg"
+                                style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                href="{% url 'trips' %}">explore
+                                now<span></span><span></span><span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Home Slider Nav - Prev -->
+        <div class="home_slider_nav home_slider_prev">
+            <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                <defs>
+                    <linearGradient id='home_grad_prev'>
+                        <stop offset='0%' stop-color='#fa9e1b' />
+                        <stop offset='100%' stop-color='#8d4fff' />
+                    </linearGradient>
+                </defs>
+                <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+					M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+					C22.545,2,26,5.541,26,9.909V23.091z" />
+                <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+					11.042,18.219 " />
+            </svg>
+        </div>
+
+        <!-- Home Slider Nav - Next -->
+        <div class="home_slider_nav home_slider_next">
+            <svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                <defs>
+                    <linearGradient id='home_grad_next'>
+                        <stop offset='0%' stop-color='#fa9e1b' />
+                        <stop offset='100%' stop-color='#8d4fff' />
+                    </linearGradient>
+                </defs>
+                <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+				M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+				C22.545,2,26,5.541,26,9.909V23.091z" />
+                <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+				17.046,15.554 " />
+            </svg>
+        </div>
+
+        <!-- Home Slider Dots -->
+
+        <div class="home_slider_dots">
+            <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                <li class="home_slider_custom_dot active">
+                    <div></div>01.
+                </li>
+                <li class="home_slider_custom_dot">
+                    <div></div>02.
+                </li>
+                <li class="home_slider_custom_dot">
+                    <div></div>03.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+<br><br>
+<!-- Intro -->
+
+<div class="intro">
+    <div class="container">
+        <h2 class="intro_title text-center"><span>Our recent adventures and safaris</span></h2>
+
+        <div class="row intro_items">
+
+            <!-- Intro Item -->
+            {% for adventures in adventures_safaris %}
+            <div class="col-lg-4 intro_col">
+                <div class="intro_item">
+                    <div class="intro_item_overlay"></div>
+
+                    <div class="intro_item_background" style="background-image:url({{ adventures.pictures_url }})">
+                    </div>
+                    <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+                        <div class="intro_date">{{ adventures.start_date }} - {{ adventures.end_date }}</div>
+                        <div class="button intro_button">
+                            <div class="button_bcg"
+                                style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                href="{% url 'a_tour' adventures.id %}">see
+                                more<span></span><span></span><span></span></a>
+                        </div>
+                        <div class="intro_center text-center">
+                            <h1>{{ adventures.name }}</h1>
+                            <div class="intro_price">KSH {{ adventures.price }}</div><br>
+                            <div class="intro_price"><b>{{ adventures.location }}</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+
+<div class="cta">
+
+    <div class="cta_background" style="background-image:url(../../static/images/cta.jpg)"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <!-- CTA Slider -->
+
+                <div class="cta_slider_container">
+                    <div class="owl-carousel owl-theme cta_slider">
+
+                        <!-- CTA Slider Item -->
+                        <div class="owl-item cta_item text-center">
+                            <div class="cta_title">Group and student tours</div>
+                            <div class="rating_r rating_r_4">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <article class="cta_text">Tours around Kenya with family and friends in groups of any number
+                                or as students and explore the hidden gems of our country, Pomper adventures and safaris
+                                is dedicated to make sure you recieve top notch service while enjoying nature with
+                                company.</article>
+                            <!-- <div class="button cta_button">
+                                <div class="button_bcg"
+                                    style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                    href="{% url 'trips' %}">book
+                                    now<span></span><span></span><span></span></a>
+                            </div> -->
+                        </div>
+
+                        <!-- CTA Slider Item -->
+                        <div class="owl-item cta_item text-center">
+                            <div class="cta_title">honey moon packages</div>
+                            <div class="rating_r rating_r_4">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <article class="cta_text">We have handpicked some of the best bush and safari destinations
+                                for your honeymoon in Kenya. At the bottom of each featured safari honeymoon hotel, we
+                                will offer an exciting safari beach hotel that you can combine with for the perfect
+                                Kenya safari honeymoon package. You will want to extend your stay here. Dive in now!
+                            </article>
+                            <!-- <div class="button cta_button">
+                                <div class="button_bcg"
+                                    style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                    href="">book
+                                    now<span></span><span></span><span></span></a>
+                            </div> -->
+                        </div>
+
+                        <!-- CTA Slider Item -->
+                        <div class="owl-item cta_item text-center">
+                            <div class="cta_title">Team building packages</div>
+                            <div class="rating_r rating_r_4">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <article class="cta_text">Come together as a team from any field of expertise and enjoy and
+                                get to know each aways from routine meet ups, We will hand the rest.Our quality service
+                                will leave you booking your next team building activities with Pomper adventures and
+                                safaris.</article>
+                            <!-- <div class="button cta_button">
+                                <div class="button_bcg"
+                                    style="background: linear-gradient(to right, #fa9e1b, #09080a, #fa9e1b);"></div><a
+                                    href="#">book
+                                    now<span></span><span></span><span></span></a>
+                            </div> -->
+                        </div>
+
+                    </div>
+
+                    <!-- CTA Slider Nav - Prev -->
+                    <div class="cta_slider_nav cta_slider_prev">
+                        <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                            viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                            <defs>
+                                <linearGradient id='cta_grad_prev'>
+                                    <stop offset='0%' stop-color='#fa9e1b' />
+                                    <stop offset='100%' stop-color='#8d4fff' />
+                                </linearGradient>
+                            </defs>
+                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+								M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+								C22.545,2,26,5.541,26,9.909V23.091z" />
+                            <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+								11.042,18.219 " />
+                        </svg>
+                    </div>
+
+                    <!-- CTA Slider Nav - Next -->
+                    <div class="cta_slider_nav cta_slider_next">
+                        <svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                            viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                            <defs>
+                                <linearGradient id='cta_grad_next'>
+                                    <stop offset='0%' stop-color='#fa9e1b' />
+                                    <stop offset='100%' stop-color='#8d4fff' />
+                                </linearGradient>
+                            </defs>
+                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+							M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+							C22.545,2,26,5.541,26,9.909V23.091z" />
+                            <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+							17.046,15.554 " />
+                        </svg>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Offers -->
+
+<div class="offers">
+    <div class="test_border"></div>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col text-center">
+                <h2 class="section_title">the best offers right now</h2>
+            </div>
+        </div>
+        <div class="row offers_items">
+
+            <!-- Offers Item -->
+            {% for roadtrip in roadtrips %}
+            <div class="col-lg-6 offers_col">
+                <div class="offers_item">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="offers_image_container">
+
+                                <div class="offers_image_background image-fluid"
+                                    style="background-image:url(  {{ roadtrip.pictures_url}} )"
+                                    style="background-size: cover; background-attachment: fixed;background-position: center;">
+                                </div>
+                                <div class="offer_name"><a
+                                        href="{% url 'trip' roadtrip.id %}">{{ roadtrip.trip_name }}</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="offers_content">
+                                <div class="offers_price">KSH {{ roadtrip.price }}</div>
+                                <!-- <span>per night</span> -->
+                                <div class="rating_r rating_r_4 offers_rating">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                                <p class="offers_text">{{ roadtrip.desc }}</p>
+                                <div class="offers_icons">
+                                    <ul class="offers_icons_list">
+                                        <li class="offers_icons_item"><img src="{% static 'images/post.png'%}" alt="">
+                                        </li>
+                                        <li class="offers_icons_item"><img src="{% static 'images/compass.png'%}"
+                                                alt=""></li>
+                                        <li class="offers_icons_item"><img src="{% static 'images/bicycle.png'%}"
+                                                alt=""></li>
+                                        <li class="offers_icons_item"><img src="{% static 'images/sailboat.png'%}"
+                                                alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="offers_link"><a href="{% url 'trip' roadtrip.id %}">read more</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials  -->
+<div class="testimonials">
+    <div class="test_border mb-4"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="section_title">Gallery</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <!-- Testimonials Slider -->
+
+                <div class="test_slider_container">
+                    <div class="owl-carousel owl-theme test_slider">
+
+                        <!-- Testimonial Item -->
+                        {% for pic in gallery %}
+                        <div class="owl-item">
+                            <div class="test_item">
+                                <div class="test_image"><img src="{{ pic.pic_url }}" alt="" style="width: 100%;"></div>
+                                <div class="test_icon"><img src="../../static/images/island_t.png" alt=""></div>
+                                <div class="test_content_container">
+                                    <div class="test_content">
+                                        <div class="test_item_info">
+                                            <div class="test_name">{{ pic.date }}</div>
+                                            <!-- <div class="test_date">May 24, 2017</div> -->
+                                        </div>
+                                        <article>{{ pic.pic_desc }}</article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Testimonials Slider Nav - Prev -->
+                    <div class="test_slider_nav test_slider_prev">
+                        <svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                            viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                            <defs>
+                                <linearGradient id='test_grad_prev'>
+                                    <stop offset='0%' stop-color='#fa9e1b' />
+                                    <stop offset='100%' stop-color='#8d4fff' />
+                                </linearGradient>
+                            </defs>
+                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+								M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+								C22.545,2,26,5.541,26,9.909V23.091z" />
+                            <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
+								11.042,18.219 " />
+                        </svg>
+                    </div>
+
+                    <!-- Testimonials Slider Nav - Next -->
+                    <div class="test_slider_nav test_slider_next">
+                        <svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="33px"
+                            viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
+                            <defs>
+                                <linearGradient id='test_grad_next'>
+                                    <stop offset='0%' stop-color='#fa9e1b' />
+                                    <stop offset='100%' stop-color='#8d4fff' />
+                                </linearGradient>
+                            </defs>
+                            <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
+							M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
+							C22.545,2,26,5.541,26,9.909V23.091z" />
+                            <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
+							17.046,15.554 " />
+                        </svg>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="contact">
+    <div class="contact_background" style="background-image:url(../../static/images/pom21.JPG)"></div>
+
+    <div class="container">
+        {% include 'partials/messages.html' %}
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="contact_image">
+
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="contact_form_container"
+                    style="background: linear-gradient(to top right, #fa9e1b, #1d1b1f);">
+                    <div class="contact_title">get in touch</div>
+                    <form action="" method="POST" enctype="multipart/form-data" id="contact_form" class="contact_form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.from_email|as_crispy_field }}
+
+                        </div>
+                        <div class="form-group">
+                            {{ form.subject|as_crispy_field }}
+
+                        </div>
+                        <div class="form-group">
+                            {{ form.message|as_crispy_field }}
+
+                        </div>
+
+                        <button type="submit" style="background: black;" id="form_submit_button"
+                            class="form_submit_button button">send
+                            message<span></span><span></span><span></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
